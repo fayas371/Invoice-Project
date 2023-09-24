@@ -1,0 +1,86 @@
+{% extends 'base.html'%}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Invoice Detail</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        center {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        p {
+            font-size: 16px;
+            margin-top: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class='container'>
+
+        <center>
+        <h1>Invoice Detail</h1>
+        </center>
+        <table>
+            <thead>
+                <tr>
+                    <th>Invoice Date</th>
+                    <th>Customer_name</th>
+                    <th>Description</th>
+                    <th>Quantity</th>
+                    <th>Unit Price</th>
+                    <th>Price</th>
+                    <th>Edit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ invoice.date }}</td>
+                    <td>{{ invoice.customer_name }}</td>
+                    <td>{{ invoicedetail.description }}</td>
+                    <td>{{ invoicedetail.quantity }}</td>
+                    <td>{{ invoicedetail.unit_price }}</td>
+                    <td>{{ invoicedetail.price }}</td>
+                    <td><a href="{%url 'update_invoice_detail' invoicedetail.pk %}">Update</a>
+                </tr>
+            </tbody>
+        </table>
+        <p> </p>
+        <p></p>
+    </div>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,39 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <title>{% block title %}Hello, world!{% endblock %}</title>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<center>
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <a class="navbar-brand" href="{% url 'Home_page' %}">Welcome To our Website</a>
+    
+</center>
+</nav>
+
+<div class="container">
+    {% block content %}
+    {% endblock content%}
+</div>
+
+<!-- Bootstrap JS and jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRUn4I6hxg5f5SSg02IIZkAveM4Z7q5z2t0o5fI5F3"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+    integrity="sha384-uVAP3a8nX6B5T5f4x6fFqPtzGxHqF8+9KFb7eZ5z2FE5uMlK99NYLlzyvpf22b9S0"
+    crossorigin="anonymous"></script>
+
+</body>
+</html>

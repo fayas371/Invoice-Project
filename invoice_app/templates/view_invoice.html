@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<center>
+<div class="container mt-4">
+    <h1 class="mb-4">Invoice List</h1>
+
+    <!-- Create Invoice Button -->
+   
+    <a href="{% url 'create_invoice' %}" class="btn btn-success mb-4">Create Invoice</a>
+
+    <!-- Viewing Options Buttons -->
+    <div class="btn-group mb-4" role="group" aria-label="Viewing Options">
+        <!-- Add your viewing options buttons here -->
+    </div>
+</center>
+    <div class="row" id="invoice-list">
+        {% for invoice in invoice_list %}
+        <div class="col-md-4 col-sm-6 mb-4 invoice-card" data-view="list">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ invoice.date }}</h5>
+                    <p class="card-text">{{ invoice.customer_name }}</p>
+                    <a href="{% url 'invoice_details' invoice.pk %}" class="btn btn-success">Details</a>
+                    <a href="{% url 'update_invoice' invoice.pk %}" class="btn btn-primary">Edit</a>
+                    <a href="{% url 'delete_invoice' invoice.pk %}" class="btn btn-danger">Delete</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
